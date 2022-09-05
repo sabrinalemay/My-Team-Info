@@ -1,30 +1,20 @@
-const { default: test } = require('node:test');
-const Manager = require('./lib/Manager');
-const manager = new Manager('sabrina','12345','my@email.com','1200');
+const Manager = require('../lib/Manager');
 
-test('testing to see if we can get manager object', () =>{
-    expect(manager.name).toBe('sabrina');
-    expect(manager.id).toBe('12345');
-    expect(manager.email).toBe('my@email.com');
-    expect(manager.getOfficeNumber).toBe('1200');
+test('testing to see if we can get office number with constructor', () => {
+    const numberTest = 100;
+    const manager = new Manager("foo", 1, "test@email.com", numberTest);
+    expect(manager.officeNumber).toBe(numberTest);
 });
 
-test('testing to see if name comes from getName()', () =>{
-    expect(manager.getName()).toBe('sabrina');
+test('Does getRole() return Manager', () => {
+    const managerTest = "Manager";
+    const manager = new Manager("foo", 1, "test@email.com", 100);
+    expect(manager.getRole()).toBe(managerTest);
 });
 
-test('testing to see if id comes from getId()', () =>{
-    expect(manager.getId()).toBe('12345');
+test('Does getOfficeNumber()', () => {
+    const numberTest = 100;
+    const manager = new Manager("foo", 1, "test@email.com", numberTest);
+    expect(manager.getOfficeNumber()).toBe(numberTest);
 });
 
-test('testing to see if email comes from getEmail()', () =>{
-    expect(manager.getEmail()).toBe('my@email.com');
-});
-
-test('testing to see if office number comes from getOfficeNumber()', () =>{
-    expect(manager.getOfficeNumber()).toBe('1200');
-});
-
-test('testing to see if role comes from getRole()', () =>{
-    expect(manager.getRole()).toBe('Manager');
-});
