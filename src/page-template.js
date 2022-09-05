@@ -5,35 +5,44 @@ let finalString= "";
     const createManager = manager => {
         finalString += `
     <div class="manager">
-        <h2 class="title">${manager.getRole()}</h2>
-        <h2 class="name">${manager.name}</h2>
-        <h2 class="id">${manager.id}</h2>
-        <h2 class="email>${manager.id}</h2>
+        <h2 class="titleManager">${manager.getRole()}</h2>
+        <h2 class="nameManager">${manager.name}</h2>
+        <h2 class="idManager">${manager.id}</h2>
+        <h2 class="emailManager">${manager.email}</h2>
+        <h2 class="officeNumber">${manager.officeNumber}</h2>
     </div>
     `
     }
     const createEngineer = engineer => {
         finalString += `
         <div class="engineer">
-            <h2 class="title">${engineer.getRole()}</h2>
+            <h2 class="titleEngineer">${engineer.getRole()}</h2>
+            <h2 class="nameEngineer">${engineer.name}</h2>
+            <h2 class="idEngineer">${engineer.id}</h2>
+            <h2 class="emailEngineer">${engineer.email}</h2>
+            <h2 class="github">${engineer.github}</h2>
         </div>
         `
     }
     const createIntern = intern => {
         finalString += `
         <div class="intern">
-            <h2 class="title">${intern.getRole()}</h2>
+            <h2 class="titleIntern">${intern.getRole()}</h2>
+            <h2 class="nameIntern">${intern.name}</h2>
+            <h2 class="idIntern">${intern.id}</h2>
+            <h2 class="emailIntern">${intern.email}</h2>
+            <h2 class="school">${intern.school}</h2>
         </div>
         `
     }
     for (let i = 0; i < team.length; i++){
-        if (team[i].getRole()=== "Manager"){
+        if (team[i].getRole()=== "manager"){
             createManager(team[i])
-        } else if (team[i].getRole()=== "Intern"){
+        } else if(team[i].getRole()=== "intern"){
             createIntern(team[i])
-        } else if (team[i].getRole()=== "Engineer"){
+        } else (team[i].getRole()=== "engineer")
             createEngineer(team[i])
-        }
+        
     }
     return finalString
 }
@@ -60,10 +69,12 @@ module.exports = team => {
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="team-area col-12 d-flex justify-content-center">
-                ${generateTeam(team)}
+    <div class="card">
+        <div class="container">
+            <div class="row">
+                
+                    ${generateTeam(team)}
+                
             </div>
         </div>
     </div>
