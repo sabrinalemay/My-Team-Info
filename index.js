@@ -1,12 +1,12 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const path = require('path');
+const render = require("./src/page-template.js");
+
 const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
 const Engineer = require('./lib/Engineer');
-const teamMembers = [];
 
-const render = require("./src/page-template.js");
+const teamMembers = [];
 
 const promptManager = () => {
     return inquirer.prompt([{

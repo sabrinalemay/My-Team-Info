@@ -1,38 +1,50 @@
 const generateTeam = team => {
-    // return `${team[0].email}`
+
 let finalString= "";
 
     const createManager = manager => {
         finalString += `
-    <div class="manager">
+    <div class="manager-card" style="width: 18rem;">
+        <div class="card-header"> 
         <h2 class="titleManager">${manager.getRole()}</h2>
-        <h2 class="nameManager">${manager.name}</h2>
-        <h2 class="idManager">${manager.id}</h2>
-        <h2 class="emailManager">${manager.email}</h2>
-        <h2 class="officeNumber">${manager.officeNumber}</h2>
+        ${manager.name} <br/>
+        <div class="fas fa-mug-hot"></i>Manager</div>
+        <ul class ="list-group list-group-flush">
+            <li class="list-group-item">${manager.id}</li>
+            <li class="list-group-item"> <span id="email"> <a href="mailto: ${manager.email}">${manager.email}</a></span></li>
+            <li class="list-group-item">${manager.officeNumber}</li>
+        </ul>
     </div>
     `
     }
     const createEngineer = engineer => {
         finalString += `
-        <div class="engineer">
-            <h2 class="titleEngineer">${engineer.getRole()}</h2>
-            <h2 class="nameEngineer">${engineer.name}</h2>
-            <h2 class="idEngineer">${engineer.id}</h2>
-            <h2 class="emailEngineer">${engineer.email}</h2>
-            <h2 class="github">${engineer.github}</h2>
-        </div>
+        <div class="manager-card" style="width: 18rem;">
+        <div class="card-header"> 
+        <h2 class="titleManager">${engineer.getRole()}</h2> Name
+        ${engineer.name} <br/>
+        <div class="fas fa-mug-hot"></i>Manager</div>
+        <ul class ="list-group list-group-flush">
+            <li class="list-group-item">ID ${engineer.id}</li>
+            <li class="list-group-item"> <span id="email"> <a href="mailto: ${engineer.email}"> Email ${engineer.email}</a></span></li>
+            <li class="list-group-item"> <a target="_blank" href="https://github.com/${engineer.github}"> GitHub ${engineer.github}</a></li>
+        </ul>
+    </div>
         `
     }
     const createIntern = intern => {
         finalString += `
-        <div class="intern">
-            <h2 class="titleIntern">${intern.getRole()}</h2>
-            <h2 class="nameIntern">${intern.name}</h2>
-            <h2 class="idIntern">${intern.id}</h2>
-            <h2 class="emailIntern">${intern.email}</h2>
-            <h2 class="school">${intern.school}</h2>
-        </div>
+        <div class="manager-card" style="width: 18rem;">
+        <div class="card-header"> 
+        <h2 class="titleManager">${intern.getRole()}</h2> Name
+        ${intern.name} <br/>
+        <div class="fas fa-mug-hot"></i>Manager</div>
+        <ul class ="list-group list-group-flush">
+            <li class="list-group-item"> ID ${intern.id}</li>
+            <li class="list-group-item"> <span id="email"> <a href="mailto: ${intern.email}"> Email ${intern.email}</a></span></li>
+            <li class="list-group-item"> School ${intern.school}</li>
+        </ul>
+    </div>
         `
     }
     for (let i = 0; i < team.length; i++){

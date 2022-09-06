@@ -9,7 +9,7 @@
   },
   "scripts": {
     "type": "module",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,6 @@
   "homepage": "https://github.com/sabrinalemay/My-Team-Info#readme",
   "dependencies": {
     "inquirer": "^8.2.4",
-    "jest": "^28.1.2"
+    "jest": "^28.1.3"
   }
 }
